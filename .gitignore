@@ -1,0 +1,6 @@
+.env
+/node_modules
+/.evershop
+.idea
+extensions/sample/dist/
+themes/sample/dist/

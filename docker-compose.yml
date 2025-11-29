@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:17.5
+    container_name: evershop_db
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: hQ9s!V3pZt2L@e7K
+      POSTGRES_DB: evershop
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - evershop_net
+
+networks:
+  evershop_net:
+    driver: bridge
+
+volumes:
+  postgres_data:

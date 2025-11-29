@@ -1,0 +1,29 @@
+{
+  "name": "custom-shop",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "setup": "evershop install",
+    "build": "evershop build",
+    "start": "evershop start",
+    "dev": "evershop dev",
+    "seed": "evershop seed",
+    "start:debug": "evershop start --debug",
+    "user:create": "evershop user:create",
+    "user:changePassword": "evershop user:changePassword"
+  },
+  "dependencies": {
+    "@evershop/evershop": "2.1.0"
+  },
+  "devDependencies": {
+    "@parcel/watcher": "2.5.1",
+    "@types/config": "3.3.5",
+    "@types/express": "5.0.5",
+    "@types/node": "24.10.1",
+    "@types/pg": "8.15.6",
+    "@types/react": "19.2.7",
+    "execa": "9.6.0",
+    "typescript": "5.9.3"
+  }
+}
