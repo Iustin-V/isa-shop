@@ -8,7 +8,7 @@ COPY themes ./themes
 
 RUN npm ci
 
-RUN npm run tsc -w sample
+RUN npm run tsc -w themes/sample
 
 COPY . .
 
