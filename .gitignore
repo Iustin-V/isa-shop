@@ -1,6 +1,7 @@
-.env
-/node_modules
-/.evershop
-.idea
-extensions/sample/dist/
-themes/sample/dist/
+    .env
+    /node_modules
+    /.evershop
+    /.idea
+    extensions/sample/dist/
+    themes/sample/dist/
+    /media

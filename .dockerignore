@@ -1,0 +1,36 @@
+# Node modules
+node_modules
+
+# EverShop build output
+.evershop
+
+# Local media/uploads (NEVER send these to Docker)
+media
+public/media
+
+# Git
+.git
+.gitignore
+
+# IDE/editor stuff
+.idea
+.vscode
+
+# Logs
+*.log
+
+# Docker files and ops except staging Dockerfile
+ops/*
+!ops/staging/Dockerfile
+
+# Build outputs for themes & extensions
+extensions/*/dist
+themes/*/dist
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# npm stuff
+npm-debug.log*
+docker-compose.yml
