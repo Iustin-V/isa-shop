@@ -8,7 +8,7 @@ COPY themes ./themes
 
 RUN npm ci
 
-RUN npm run tsc -w sample-evershop-theme
+RUN npm run tsc -w sample
 
 COPY . .
 
