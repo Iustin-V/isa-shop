@@ -22,11 +22,12 @@ export default {
         [slug],
       );
       const customer = context.customer;
-
-      const expires = new Date(customer.subscription_expires_at);
-      const now = new Date();
-      const isValid = expires > now;
-
+      let isValid = false;
+      if (customer) {
+        const expires = new Date(customer.subscription_expires_at);
+        const now = new Date();
+        isValid = expires > now;
+      }
       const row = result.rows[0];
       return row
         ? {
@@ -46,7 +47,6 @@ export default {
         [id],
       );
       const row = result.rows[0];
-      console.log("row", row);
       return row || null;
     },
   },

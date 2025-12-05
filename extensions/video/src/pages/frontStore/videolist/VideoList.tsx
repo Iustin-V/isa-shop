@@ -11,7 +11,6 @@ type VideoListProps = {
 };
 
 export default function VideoList({ videos }: VideoListProps) {
-  console.log(videos);
   return (
     <div className="foo-list container mx-auto px-4 py-8">
       <h2 className="font-bold text-center mb-8">Video List</h2>
