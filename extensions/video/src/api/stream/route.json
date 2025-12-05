@@ -1,0 +1,5 @@
+{
+  "methods": ["GET"],
+  "path": "/stream/video/:filename",
+  "access": "public"
+}

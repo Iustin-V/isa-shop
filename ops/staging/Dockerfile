@@ -10,6 +10,8 @@ RUN npm ci
 
 RUN npm run tsc -w themes/sample
 
+RUN npm run tsc -w  extensions/video
+
 COPY . .
 
 RUN npm run build
