@@ -1,8 +1,57 @@
-    .env
-    /node_modules
-    /.evershop
-    /.idea
-    extensions/sample/dist/
-    themes/sample/dist/
-    /media
-    /videos
+# Environment files
+.env
+.env.*
+
+
+# Node dependencies
+node_modules/
+*/node_modules/
+
+
+# Evershop build output
+.evershop/
+.evershop/build/
+.evershop/cache/
+.evershop/server/
+
+
+# Build & dist folders (frontend, backend, themes, extensions)
+build/
+dist/
+*/build/
+*/dist/
+
+extensions/**/dist/
+themes/**/dist/
+
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+
+
+# IDE & editor files
+.idea/
+.vscode/
+*.iml
+
+
+# OS system files
+.DS_Store
+Thumbs.db
+
+
+# Media folders
+media/
+videos/
+uploads/
+storage/
+
+
+# Docker artifacts
+docker-data/
+docker-cache/

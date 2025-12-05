@@ -6,7 +6,7 @@ import { ExtendedCustomer } from "../../types/extended-customer.js";
 export default async (req: EvershopRequest, res, next) => {
   try {
     const customer = req.locals.customer as ExtendedCustomer;
-    console.log("customer", customer);
+
     if (!customer || !customer.subscription_expires_at) {
       return res.status(403).send("Subscription required");
     }
@@ -20,7 +20,6 @@ export default async (req: EvershopRequest, res, next) => {
 
     const { filename } = req.params;
     const filePath = path.join(process.cwd(), "videos", filename);
-    console.log(" api call");
     if (!fs.existsSync(filePath)) {
       res.status(404).send("Video not found");
       return;

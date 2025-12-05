@@ -5,7 +5,7 @@ import toSlug from "../../utils/to-slug.js";
 export default async function (req: EvershopRequest, res, next) {
   try {
     const { title, slug, description, filename, is_active } = req.body;
-    console.log("IN SAVE FUNCTION", req.query);
+
     const finalSlug = slug && slug.length ? slug : toSlug(title);
 
     await pool.query(
