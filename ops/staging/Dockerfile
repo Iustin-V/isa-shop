@@ -5,11 +5,11 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 
 COPY themes ./themes
+COPY extensions ./extensions
 
 RUN npm ci
 
 RUN npm run tsc -w themes/sample
-
 RUN npm run tsc -w  extensions/video
 
 COPY . .
