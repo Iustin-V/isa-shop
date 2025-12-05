@@ -4,7 +4,7 @@ type Foo {
   description: String
 }
 
-type Query {
-  foo(id: ID!): Foo
-  foos: [Foo!]!
-}
+#type Query {
+#  foo(id: ID!): Foo
+#  foos: [Foo!]!
+#}

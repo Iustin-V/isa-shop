@@ -11,8 +11,13 @@
         "name": "sample",
         "resolve": "extensions/sample",
         "enabled": false
+      },
+      {
+        "name": "video",
+        "resolve": "extensions/video",
+        "enabled": true,
+        "priority": 10
       }
-    ],
-    "theme": "sample"
+    ]
   }
 }
