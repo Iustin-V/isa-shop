@@ -167,13 +167,32 @@ export default {
           }
         }),
       );
+      const items = await select()
+        .from("cart_item")
+        .where("cart_id", "=", cartId)
+        .execute(pool);
+      const productIds = items.map((item) => item.item_product_id);
+      const products = await select()
+        .from("product")
+        .where("product_id", "IN", productIds)
+        .execute(pool);
 
-      return methods.map((method) => ({
-        id: method.uuid,
-        code: method.uuid,
-        name: method.name,
-        cost: method.cost,
-      }));
+      const containsSubscription = products.every(
+        (product) => product.is_subscription === true,
+      );
+
+      return methods
+        .map((method) => ({
+          id: method.uuid,
+          code: method.uuid,
+          name: method.name,
+          cost: method.cost,
+        }))
+        .filter((method) =>
+          containsSubscription
+            ? method.name.includes("No Shipping")
+            : !method.name.includes("No Shipping"),
+        );
     },
   },
 };
