@@ -1,4 +1,0 @@
-extend type Product {
-    isSubscription: Boolean
-    subscriptionDurationDays: Int
-}
