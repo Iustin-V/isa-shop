@@ -1,0 +1,32 @@
+.slideshow-widget {
+  max-width: 100% !important;
+  width: 100%;
+  margin: 0;
+}
+.slideshow-widget .slick-list {
+   max-height: 500px;
+ }
+.slideshow-widget .slide__wrapper {
+  height: 500px;
+  position: relative;
+}
+
+.slideshow-widget img {
+  filter: brightness(0.6);
+}
+
+
+.product__list__image {
+  img {
+    object-fit: cover!important;
+  }
+}
+.header{
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+.header nav ul li > a {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  line-height: 1.25;
+}
