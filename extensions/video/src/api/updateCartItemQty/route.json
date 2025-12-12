@@ -1,0 +1,5 @@
+{
+  "methods": ["PATCH"],
+  "path": "/cart/:cartId/items/:itemId",
+  "access": "public"
+}
