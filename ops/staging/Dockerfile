@@ -4,7 +4,6 @@ WORKDIR /app
 
 COPY package.json package-lock.json ./
 
-COPY themes ./themes
 COPY extensions ./extensions
 
 RUN npm ci
