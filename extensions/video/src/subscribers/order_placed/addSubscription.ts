@@ -3,8 +3,7 @@ import { error } from "@evershop/evershop/lib/log";
 
 const addSubscription = async (data) => {
   const { order_id, payment_status } = data;
-  console.log("order_id", order_id);
-  console.log("payment", payment_status);
+
   if (payment_status !== "paid") {
     console.error(`Order not paid. Skipping subscription check`);
     return;
@@ -17,14 +16,14 @@ const addSubscription = async (data) => {
       [order_id],
     );
     const order = orderRes.rows[0];
-    console.log("order", order);
+
     if (!order) {
       console.error(`Could not find order with ID: ${order_id}`);
       return;
     }
 
     const customerId = order.order_customer_id;
-    console.log("customerId", customerId);
+
     const itemsRes = await pool.query(
       `
         SELECT oi.*, p.is_subscription, p.subscription_duration_days
@@ -34,12 +33,10 @@ const addSubscription = async (data) => {
       `,
       [order_id],
     );
-    console.log("itemsRes", itemsRes);
 
     const subscriptionItem = itemsRes.rows.find(
       (row) => row.is_subscription === true,
     );
-    console.log("subscriptionItem", subscriptionItem);
 
     if (!subscriptionItem) {
       return;
@@ -49,7 +46,6 @@ const addSubscription = async (data) => {
 
     const expires = new Date();
     expires.setDate(expires.getDate() + duration);
-    console.log("expires", expires);
 
     await pool.query(
       `

@@ -11,7 +11,6 @@ export default {
       { uuid },
       { country, province, postcode },
     ) => {
-      console.log("REsolver gets called");
       const cartId = uuid;
       const cart = await select()
         .from("cart")
@@ -169,14 +168,17 @@ export default {
       );
       const items = await select()
         .from("cart_item")
-        .where("cart_id", "=", cartId)
+        .where("cart_id", "=", cart.cart_id)
         .execute(pool);
-      const productIds = items.map((item) => item.item_product_id);
+      const productIds = items.map((item) => item.product_id);
       const products = await select()
         .from("product")
         .where("product_id", "IN", productIds)
         .execute(pool);
 
+      if (products.length === 0) {
+        return [];
+      }
       const containsSubscription = products.every(
         (product) => product.is_subscription === true,
       );
