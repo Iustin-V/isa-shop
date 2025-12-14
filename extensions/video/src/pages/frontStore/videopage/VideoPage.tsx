@@ -25,7 +25,7 @@ export default function VideoPage({ video }) {
                 You need an active subscription to see this video
               </p>
               <a
-                href="/accessories"
+                href="/subscriptions"
                 className="text-blue-400 hover:text-blue-600 text-2xl font-semibold text-center px-6"
               >
                 Buy one now

@@ -5,13 +5,25 @@
     "currency": "GBP",
     "weightUnit": "kg"
   },
+  "themeConfig": {
+    "logo": {
+      "alt": "ISA Logo",
+      "src": "/logo.webp",
+      "width": 70,
+      "height": 70
+    },
+    "headTags": {
+      "links": [
+        { "rel": "icon", "href": "/favicon.ico", "type": "image/x-icon" }
+      ],
+      "bases": [
+        { "href": "/" }
+      ]
+    },
+    "copyRight": "© 2025 Intelligence Surveillance Academy. All Rights Reserved."
+  },
   "system": {
     "extensions": [
-      {
-        "name": "sample",
-        "resolve": "extensions/sample",
-        "enabled": false
-      },
       {
         "name": "video",
         "resolve": "extensions/video",
