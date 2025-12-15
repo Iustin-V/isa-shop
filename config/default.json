@@ -29,7 +29,32 @@
         "resolve": "extensions/video",
         "enabled": true,
         "priority": 10
+      },{
+        "name": "resend",
+        "resolve": "extensions/resend",
+        "enabled": true,
+        "priority": 20
       }
     ]
+  },
+  "resend": {
+  "from": "noreply@redeclipse.ro",
+  "events": {
+    "order_placed": {
+      "subject": "Order Confirmation",
+      "enabled": true,
+      "templatePath": "config/emails/order_confirmation.html"
+    },
+    "reset_password": {
+      "subject": "Reset Your Intelligence Surveillance Academy Password",
+      "enabled": true,
+      "templatePath": "config/emails/reset_password.html"
+    },
+    "customer_created": {
+      "subject": "Welcome to the Intelligence Surveillance Academy",
+      "enabled": true,
+      "templatePath": "config/emails/welcome.html"
+    }
   }
+}
 }
