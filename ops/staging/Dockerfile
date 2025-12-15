@@ -9,6 +9,7 @@ COPY extensions ./extensions
 RUN npm ci
 
 RUN npm run tsc -w  extensions/video
+RUN npm run tsc -w  extensions/resend
 
 COPY . .
 
