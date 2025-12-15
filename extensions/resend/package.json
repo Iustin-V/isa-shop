@@ -3,7 +3,8 @@
   "version": "2.0.0",
   "type": "module",
   "scripts": {
-    "compile": "tsc"
+    "compile": "tsc",
+    "tsc": "tsc && node src/utils/copy-static.js"
   },
   "description": "A Resend extension for EverShop.",
   "repository": {
