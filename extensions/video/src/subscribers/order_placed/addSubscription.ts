@@ -1,13 +1,8 @@
 import { pool } from "@evershop/evershop/lib/postgres";
-import { error } from "@evershop/evershop/lib/log";
 
-const addSubscription = async (data) => {
-  const { order_id, payment_status } = data;
+export default async function addSubscription(data) {
+  const { order_id } = data;
 
-  if (payment_status !== "paid") {
-    console.error(`Order not paid. Skipping subscription check`);
-    return;
-  }
   try {
     const orderRes = await pool.query(
       `SELECT *
@@ -21,8 +16,12 @@ const addSubscription = async (data) => {
       console.error(`Could not find order with ID: ${order_id}`);
       return;
     }
-
-    const customerId = order.order_customer_id;
+    console.log("order.status", order.payment_status);
+    if (order.payment_status !== "paid") {
+      console.error(`Order not paid. Skipping subscription check`);
+      return;
+    }
+    const customerId = order.customer_id;
 
     const itemsRes = await pool.query(
       `
@@ -62,6 +61,4 @@ const addSubscription = async (data) => {
   } catch (e) {
     console.error(`Failed to evaluate order ${order_id}: ${e}`);
   }
-};
-
-export default addSubscription;
+}

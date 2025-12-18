@@ -9,17 +9,23 @@ export default function SubscriptionCard(props) {
   return (
     <div className="mt-4 p-4 border rounded bg-gray-50">
       <strong>Subscription status:</strong>
-      <div>
-        {isExpired ? (
-          <span className="text-red-600">
-            Expired on {expires.toLocaleDateString()}
-          </span>
-        ) : (
-          <span className="text-green-600">
-            Active until {expires.toLocaleDateString()}
-          </span>
-        )}
-      </div>
+      {customer.subscriptionExpiresAt ? (
+        <div>
+          {isExpired ? (
+            <span className="text-red-600">
+              Expired on {expires.toLocaleDateString()}
+            </span>
+          ) : (
+            <span className="text-green-600">
+              Active until {expires.toLocaleDateString()}
+            </span>
+          )}
+        </div>
+      ) : (
+        <div>
+          <span className="text-red-600">No subscription found.</span>
+        </div>
+      )}
     </div>
   );
 }
