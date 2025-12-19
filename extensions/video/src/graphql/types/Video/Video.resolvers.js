@@ -1,3 +1,5 @@
+import { hasActiveSubscription } from "../../../services/subscriptionAccess.js";
+
 export default {
   Query: {
     videos: async (_, { showInactive }, context) => {
@@ -22,17 +24,16 @@ export default {
         [slug],
       );
       const customer = context.customer;
-      let isValid = false;
+      let hasAccess = false;
+
       if (customer) {
-        const expires = new Date(customer.subscription_expires_at);
-        const now = new Date();
-        isValid = expires > now;
+        hasAccess = await hasActiveSubscription(customer.uuid);
       }
       const row = result.rows[0];
       return row
         ? {
             ...row,
-            url: isValid ? `/api/stream/video/${row.filename}` : null,
+            url: hasAccess ? `/api/stream/video/${row.filename}` : null,
           }
         : null;
     },

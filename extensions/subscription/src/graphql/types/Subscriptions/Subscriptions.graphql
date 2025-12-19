@@ -1,0 +1,16 @@
+type Subscription {
+  subscription_id: ID!
+  name: String!
+  description: String
+  price_cents: Int!
+  interval: String!
+  interval_count: Int!
+  is_active: Boolean!
+  stripe_product_id: String
+  stripe_price_id: String
+}
+
+extend type Query {
+  subscriptions: [Subscription!]!
+  subscription(id: ID!): Subscription
+}

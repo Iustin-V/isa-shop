@@ -1,21 +1,19 @@
 import fs from "fs";
 import path from "path";
 import { EvershopRequest } from "@evershop/evershop";
-import { ExtendedCustomer } from "../../types/extended-customer.js";
+import { hasActiveSubscription } from "../../services/subscriptionAccess.js";
 
 export default async (req: EvershopRequest, res, next) => {
   try {
-    const customer = req.locals.customer as ExtendedCustomer;
+    const customer = req.locals.customer;
 
-    if (!customer || !customer.subscription_expires_at) {
-      return res.status(403).send("Subscription required");
+    if (!customer) {
+      return res.status(401).json({ error: "Unauthorized" });
     }
 
-    const expires = new Date(customer.subscription_expires_at);
-    const now = new Date();
-
-    if (expires < now) {
-      return res.status(403).send("Subscription expired");
+    const allowed = await hasActiveSubscription(customer.uuid);
+    if (!allowed) {
+      return res.status(403).json({ error: "Subscription required" });
     }
 
     const { filename } = req.params;

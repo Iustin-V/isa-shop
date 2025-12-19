@@ -1,0 +1,21 @@
+type PublicSubscription {
+    subscription_id: ID!
+    name: String!
+    description: String
+    price_cents: Int!
+    currency: String!
+    interval: String!
+    interval_count: Int!
+}
+
+type MySubscriptionInfo {
+    subscription_id: ID!
+    status: String!
+    current_period_end: String
+}
+
+extend type Query {
+    publicSubscriptions: [PublicSubscription!]!
+    publicSubscription(id: ID!): PublicSubscription
+    mySubscription: MySubscriptionInfo
+}
