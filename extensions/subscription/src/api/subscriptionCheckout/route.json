@@ -1,0 +1,5 @@
+{
+  "methods": ["POST"],
+  "path": "/subscriptions/:subscriptionId/checkout",
+  "access": "public"
+}

@@ -23,7 +23,6 @@ export default async (request, response, next) => {
   try {
     // Generate a random token using crypto module
     const { token, password } = body;
-    console.log("Data from body", token, password);
     // Hash the token
     const hash = crypto.createHash("sha256").update(token).digest("hex");
 

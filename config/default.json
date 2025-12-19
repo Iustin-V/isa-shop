@@ -33,6 +33,11 @@
         "name": "resend",
         "resolve": "extensions/resend",
         "enabled": true,
+        "priority": 30
+      },{
+        "name": "subscription",
+        "resolve": "extensions/subscription",
+        "enabled": true,
         "priority": 20
       }
     ]

@@ -16,12 +16,4 @@ export default async function (client: PoolClient) {
       );
     `,
   );
-
-  await execute(
-    client,
-    `
-      ALTER TABLE customer
-      ADD COLUMN IF NOT EXISTS subscription_expires_at TIMESTAMP NULL;
-    `,
-  );
 }
