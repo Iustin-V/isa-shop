@@ -15,7 +15,7 @@ export default async function sendOrderConfirmationEmail(data) {
     // Check if the API key is set
     const apiKey = getEnv("RESEND_API_KEY", "");
     const from = getConfig("resend.from", "");
-    console.log("Subscriber hit", apiKey, from);
+
     if (!apiKey || !from) {
       return;
     }
