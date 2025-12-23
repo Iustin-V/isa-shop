@@ -54,7 +54,7 @@ export default function SubscriptionEditPage(props) {
     }
 
     const res = await fetch(
-      `/api/admin/subscriptions/${subscription.subscription_id}`,
+      `/api/admin/subscription/delete/${subscription.subscription_id}`,
       {
         method: "DELETE",
       },
