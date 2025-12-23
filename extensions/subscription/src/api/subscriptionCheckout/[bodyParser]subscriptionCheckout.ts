@@ -11,7 +11,13 @@ export default async function (req: EvershopRequest, res, next) {
     const customer = req.locals.customer;
 
     if (!customer) {
-      return res.status(401).json({ error: { message: "Unauthorized" } });
+      return res
+        .status(401)
+        .json({
+          error: {
+            message: "You must be logged in to purchase a subscription",
+          },
+        });
     }
     const { rows: existing } = await pool.query(
       `
