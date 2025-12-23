@@ -36,11 +36,10 @@ jobs:
 
       - name: Deploy to DigitalOcean
         run: |
-          ssh -o StrictHostKeyChecking=no -i id_rsa \
-            ${{ secrets.DO_USER }}@${{ secrets.DO_HOST }} "
-              export XDG_RUNTIME_DIR=/run/user/$(id -u) &&
-              export DOCKER_HOST=unix:///run/user/$(id -u)/docker.sock &&
+          ssh -tt -o StrictHostKeyChecking=no -i id_rsa \
+            ${{ secrets.DO_USER }}@${{ secrets.DO_HOST }} \
+            "bash -lc '
               cd /var/www/custom-shop/app &&
               docker compose pull &&
               docker compose up -d --remove-orphans
-            "
+            '"
