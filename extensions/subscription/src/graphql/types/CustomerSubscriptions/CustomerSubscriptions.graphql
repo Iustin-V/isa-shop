@@ -1,0 +1,26 @@
+type CustomerSubscription {
+    uuid: ID!
+    email: String!
+    full_name: String
+
+    customer_subscription_id: ID!
+    subscription_id: ID
+    stripe_subscription_id: String!
+    status: String!
+
+    current_period_start: String
+    current_period_end: String
+    created_at: String!
+    updated_at: String!
+
+    subscription_name: String!
+    price_cents: Int!
+    currency: String!
+    interval: String!
+    interval_count: Int!
+}
+
+
+extend type Query {
+    customerSubscriptions:[CustomerSubscription]
+}

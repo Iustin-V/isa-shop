@@ -1,0 +1,15 @@
+type Video {
+  id: ID!
+  title: String!
+  description: String
+  slug: String!
+  url: String
+  filename: String
+  is_active: Boolean
+}
+
+type Query {
+  videos(showInactive: Boolean = false): [Video]!
+  video(slug: String): Video
+  videoById(id: ID): Video
+}

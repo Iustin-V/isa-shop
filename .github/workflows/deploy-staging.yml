@@ -8,6 +8,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment: staging
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -36,6 +38,6 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no -i id_rsa ${{ secrets.DO_USER }}@${{ secrets.DO_HOST }} "
             cd /var/www/custom-shop-staging &&
-            docker-compose pull &&
-            docker-compose up -d --remove-orphans
+            docker compose pull &&
+            docker compose up -d --remove-orphans
           "

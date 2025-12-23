@@ -1,0 +1,5 @@
+{
+  "methods": ["DELETE"],
+  "path": "/admin/video/delete/:id",
+  "access": "private"
+}

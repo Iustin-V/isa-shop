@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "type": "module",
   "private": true,
-  "workspaces": ["themes/*"],
+  "workspaces": [
+    "themes/*",
+    "extensions/*"
+  ],
   "scripts": {
     "setup": "evershop install",
     "build": "evershop build",
@@ -15,16 +18,21 @@
     "user:changePassword": "evershop user:changePassword"
   },
   "dependencies": {
-    "@evershop/evershop": "2.1.0"
+    "@evershop/evershop": "2.1.0",
+    "@evershop/postgres-query-builder": "^2.0.1",
+    "@fingerprintjs/fingerprintjs": "^5.0.1",
+    "dayjs": "^1.11.19",
+    "glob": "^13.0.0",
+    "prettier": "^3.7.3"
   },
   "devDependencies": {
     "@parcel/watcher": "2.5.1",
     "@types/config": "3.3.5",
     "@types/express": "5.0.5",
-    "@types/node": "24.10.1",
+    "@types/node": "^24.10.1",
     "@types/pg": "8.15.6",
     "@types/react": "19.2.7",
     "execa": "9.6.0",
-    "typescript": "5.9.3"
+    "typescript": "^5.9.3"
   }
 }

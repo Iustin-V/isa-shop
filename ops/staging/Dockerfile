@@ -4,11 +4,13 @@ WORKDIR /app
 
 COPY package.json package-lock.json ./
 
-COPY themes ./themes
+COPY extensions ./extensions
 
 RUN npm ci
 
-RUN npm run tsc -w sample-evershop-theme
+RUN npm run tsc -w  extensions/video
+RUN npm run tsc -w  extensions/resend
+RUN npm run tsc -w  extensions/subscription
 
 COPY . .
 
