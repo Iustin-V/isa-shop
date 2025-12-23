@@ -1,14 +1,14 @@
-name: Deploy Staging
+name: Deploy Production
 
 on:
   push:
     branches:
-      - staging
+      - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    environment: staging
+    environment: prod
 
     steps:
       - name: Checkout repo
@@ -26,8 +26,8 @@ jobs:
         with:
           context: .
           push: true
-          file: ops/staging/Dockerfile
-          tags: ghcr.io/${{ secrets.GHCR_REPOSITORY_OWNER }}/custom-shop-staging:latest
+          file: ops/prod/Dockerfile
+          tags: ghcr.io/${{ secrets.GHCR_REPOSITORY_OWNER }}/custom-shop:latest
 
       - name: Decode SSH key
         run: |
@@ -37,7 +37,7 @@ jobs:
       - name: Deploy to DigitalOcean
         run: |
           ssh -o StrictHostKeyChecking=no -i id_rsa ${{ secrets.DO_USER }}@${{ secrets.DO_HOST }} "
-            cd /var/www/custom-shop-staging &&
+            cd /var/www/custom-shop/app &&
             docker compose pull &&
             docker compose up -d --remove-orphans
           "
