@@ -43,7 +43,7 @@
     ]
   },
   "resend": {
-  "from": "noreply@redeclipse.ro",
+  "from": "noreply@covertsurveillancebooks.com",
   "events": {
     "order_placed": {
       "subject": "Order Confirmation",
