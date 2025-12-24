@@ -9,8 +9,8 @@
     "logo": {
       "alt": "ISA Logo",
       "src": "/logo.webp",
-      "width": 70,
-      "height": 70
+      "width": 120,
+      "height": 120
     },
     "headTags": {
       "links": [
@@ -20,7 +20,7 @@
         { "href": "/" }
       ]
     },
-    "copyRight": "© 2025 Intelligence Surveillance Academy. All Rights Reserved."
+    "copyRight": "© 2025 Geru Surveillance Academy LTD. All Rights Reserved."
   },
   "system": {
     "extensions": [
@@ -51,12 +51,12 @@
       "templatePath": "config/emails/order_confirmation.html"
     },
     "reset_password": {
-      "subject": "Reset Your Intelligence Surveillance Academy Password",
+      "subject": "Reset Your Geru Surveillance Academy Password",
       "enabled": true,
       "templatePath": "config/emails/reset_password.html"
     },
     "customer_created": {
-      "subject": "Welcome to the Intelligence Surveillance Academy",
+      "subject": "Welcome to the Geru Surveillance Academy",
       "enabled": true,
       "templatePath": "config/emails/welcome.html"
     }
