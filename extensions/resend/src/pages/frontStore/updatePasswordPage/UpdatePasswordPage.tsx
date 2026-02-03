@@ -10,8 +10,13 @@ function passwordsMatch(password, confirmPassword) {
 }
 
 export default function UpdatePasswordPage() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const token = urlParams.get("token");
+  const [token, setToken] = React.useState<string | null>(null);
+
+  React.useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const tokenFromUrl = urlParams.get("token");
+    setToken(tokenFromUrl);
+  }, []);
 
   const [password, setPassword] = React.useState("");
   const [confirmPassword, setConfirmPassword] = React.useState("");
