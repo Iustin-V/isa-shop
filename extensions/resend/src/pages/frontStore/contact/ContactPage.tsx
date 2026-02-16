@@ -48,7 +48,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="container max-w-xl mx-auto py-12">
+    <div className="container max-w-xl mx-auto py-12 px-6">
       <h1 className="text-2xl font-bold mb-8">Contact Us</h1>
 
       {status === "success" && (
