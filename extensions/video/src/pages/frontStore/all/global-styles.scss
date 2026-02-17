@@ -10,18 +10,16 @@
   height: 500px;
   position: relative;
 }
-
 .slideshow-widget img {
   filter: brightness(0.6);
 }
-
-
 .product__list__image {
   img {
     object-fit: cover!important;
   }
 }
 .header{
+  padding: 0.4rem 1.5rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 .header nav ul li > a {
@@ -34,12 +32,16 @@
   color:white;
 }
 
+@media (min-width: 900px) {
+  .header nav ul li > a {
+    font-size: 1rem;
+  }
+}
 @media (min-width: 768px) {
   nav .group > ul {
     pointer-events: none;
     margin-top: 0 !important;
   }
-
   nav .group:hover > ul,
   nav .group > ul:hover,
   nav .group:focus-within > ul {

@@ -7,9 +7,18 @@ const WINDOW_MINUTES = 20;
 
 export default async (req, res) => {
   try {
-    const { name, email, message, fingerprint } = req.body;
+    const { name, email, message, company, phone, howDidYouHear, fingerprint } =
+      req.body;
 
-    if (!name || !email || !message || !fingerprint) {
+    if (
+      !name ||
+      !email ||
+      !message ||
+      !company ||
+      !phone ||
+      !fingerprint ||
+      !howDidYouHear
+    ) {
       return res.status(400).json({ error: "Invalid payload" });
     }
 
@@ -44,6 +53,9 @@ export default async (req, res) => {
       html: `
       <p><strong>Name:</strong> ${name}</p>
       <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Company:</strong> ${company}</p>
+      <p><strong>Phone:</strong> ${phone}</p>
+      <p><strong>How did you hear about us:</strong> ${howDidYouHear}</p>
       <p>${message}</p>
     `,
     });
