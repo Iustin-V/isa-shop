@@ -1,21 +1,28 @@
 .slideshow-widget {
-  max-width: 100% !important;
+  max-width: 1090px !important;
   width: 100%;
-  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 22px;
 }
+
 .slideshow-widget .slick-list {
    max-height: 500px;
  }
+.slick-list{
+  border-radius: 20px;
+  overflow: hidden;
+}
 .slideshow-widget .slide__wrapper {
   height: 500px;
   position: relative;
 }
 .slideshow-widget img {
-  filter: brightness(0.6);
+  filter: brightness(0.5);
 }
 .product__list__image {
   img {
-    object-fit: cover!important;
+    object-fit: contain!important;
   }
 }
 .header{
@@ -271,66 +278,66 @@ html {
   background: #ffffff;
 }
 
-/* Circle-ring background like the screenshot (blue) */
-.courses-landing-section::before,
-.courses-landing-section::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Big ring top-right */
-.courses-landing-section::before {
-  width: 900px;
-  height: 900px;
-  top: -420px;
-  right: -420px;
-
-  /* ring effect */
-  background:
-          radial-gradient(circle at center,
-                  transparent 58%,
-                  rgba(20, 90, 230, 0.10) 58%,
-                  rgba(20, 90, 230, 0.10) 60%,
-                  transparent 60%
-          ),
-          radial-gradient(circle at center,
-                  transparent 72%,
-                  rgba(20, 90, 230, 0.06) 72%,
-                  rgba(20, 90, 230, 0.06) 74%,
-                  transparent 74%
-          ),
-          radial-gradient(circle at center,
-                  transparent 84%,
-                  rgba(20, 90, 230, 0.04) 84%,
-                  rgba(20, 90, 230, 0.04) 85.5%,
-                  transparent 85.5%
-          );
-}
-
-/* Medium ring bottom-left */
-.courses-landing-section::after {
-  width: 780px;
-  height: 780px;
-  bottom: -420px;
-  left: -360px;
-
-  background:
-          radial-gradient(circle at center,
-                  transparent 56%,
-                  rgba(20, 90, 230, 0.08) 56%,
-                  rgba(20, 90, 230, 0.08) 58%,
-                  transparent 58%
-          ),
-          radial-gradient(circle at center,
-                  transparent 70%,
-                  rgba(20, 90, 230, 0.05) 70%,
-                  rgba(20, 90, 230, 0.05) 72%,
-                  transparent 72%
-          );
-}
+///* Circle-ring background like the screenshot (blue) */
+//.courses-landing-section::before,
+//.courses-landing-section::after {
+//  content: "";
+//  position: absolute;
+//  border-radius: 50%;
+//  pointer-events: none;
+//  z-index: 0;
+//}
+//
+///* Big ring top-right */
+//.courses-landing-section::before {
+//  width: 900px;
+//  height: 900px;
+//  top: -420px;
+//  right: -420px;
+//
+//  /* ring effect */
+//  background:
+//          radial-gradient(circle at center,
+//                  transparent 58%,
+//                  rgba(20, 90, 230, 0.10) 58%,
+//                  rgba(20, 90, 230, 0.10) 60%,
+//                  transparent 60%
+//          ),
+//          radial-gradient(circle at center,
+//                  transparent 72%,
+//                  rgba(20, 90, 230, 0.06) 72%,
+//                  rgba(20, 90, 230, 0.06) 74%,
+//                  transparent 74%
+//          ),
+//          radial-gradient(circle at center,
+//                  transparent 84%,
+//                  rgba(20, 90, 230, 0.04) 84%,
+//                  rgba(20, 90, 230, 0.04) 85.5%,
+//                  transparent 85.5%
+//          );
+//}
+//
+///* Medium ring bottom-left */
+//.courses-landing-section::after {
+//  width: 780px;
+//  height: 780px;
+//  bottom: -420px;
+//  left: -360px;
+//
+//  background:
+//          radial-gradient(circle at center,
+//                  transparent 56%,
+//                  rgba(20, 90, 230, 0.08) 56%,
+//                  rgba(20, 90, 230, 0.08) 58%,
+//                  transparent 58%
+//          ),
+//          radial-gradient(circle at center,
+//                  transparent 70%,
+//                  rgba(20, 90, 230, 0.05) 70%,
+//                  rgba(20, 90, 230, 0.05) 72%,
+//                  transparent 72%
+//          );
+//}
 
 /* Inner container */
 .courses-landing-inner {
@@ -462,4 +469,21 @@ html {
   .course-landing-card {
     padding: 20px;
   }
+}
+
+
+.product__detail__right button:hover{
+  background-color: #132e4a !important;
+}
+.product__list__item__inner{
+  button {
+    background-color: #132e4a !important;
+  }
+}
+.primary:hover{
+  background-color: #132e4a !important;
+
+}
+.minicart__viewcart__button{
+    background-color: #132e4a !important;
 }
